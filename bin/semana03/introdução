@@ -32,7 +32,7 @@ public class Introducao {
         boolean teste = false;
 
         //String 
-        String nome = "Trô Armen Kalaydjian";
+        String nome = "Rafinha";
         System.out.println(nome);
         System.out.println(nome.toLowerCase());
         System.out.println(nome.toUpperCase());
