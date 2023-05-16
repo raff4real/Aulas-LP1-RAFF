@@ -1,10 +1,12 @@
-public class Pessoa {
+package semana11;
+
+public class PessoaPeso {
     public double altura;
     public double peso;
 
     public double calcularImc() {
-        double alturaMetros = altura / 100; // Converter altura para metros
-        return peso / (alturaMetros * alturaMetros);
+
+        return peso / (altura * altura);
     }
 
     public String getFaixa() {
@@ -32,7 +34,7 @@ public class Pessoa {
     }
 
     public static void main(String[] args) {
-        Pessoa p1 = new Pessoa();
+        PessoaPeso p1 = new PessoaPeso();
         p1.altura = 172;
         p1.peso = 70.3;
 
