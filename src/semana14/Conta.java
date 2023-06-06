@@ -1,9 +1,19 @@
+package semana14;
+
 public class Conta {
-    private int codigo;
+    private final int codigo;
     private double saldo;
-    private String correntista;
+    private final String correntista;
 
     public Conta(int codigo, String correntista) {
+        if (codigo <= 0) {
+            throw new RuntimeException("Código inválido para conta");
+        }
+
+        if (correntista.length() < 5 || correntista.length() > 100) {
+            throw new RuntimeException("Nome do correntista deve ter entre 5 e 100 caracteres");
+        }
+
         this.codigo = codigo;
         this.correntista = correntista;
         this.saldo = 0.0;
@@ -25,7 +35,7 @@ public class Conta {
         if (valor <= 0) {
             throw new RuntimeException("Valor inválido para saque");
         }
-        
+
         if (valor > saldo) {
             throw new RuntimeException("Saldo insuficiente para saque");
         }
@@ -45,7 +55,7 @@ public class Conta {
         if (valor <= 0) {
             throw new RuntimeException("Valor inválido para transferência");
         }
-        
+
         if (valor > saldo) {
             throw new RuntimeException("Saldo insuficiente para transferência");
         }
